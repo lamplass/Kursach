@@ -27,7 +27,8 @@ namespace WindowsFormsApp1
                     map[x, y] = coords_posit(x, y) + 1;
             space_x = size - 1;
             space_y = size - 1;
-            map[space_x, space_y - 1] = 0;       
+            map[space_x, space_y] = 0;
+            
         }
 
         public int get_number (int position)
@@ -45,11 +46,10 @@ namespace WindowsFormsApp1
         }
 
 
-        private int posit_coords (int position, out int x, out int y)
+        private void posit_coords (int position, out int x, out int y)
         {
             x = position % size;
             y = position / size;
-
         }
 
     }

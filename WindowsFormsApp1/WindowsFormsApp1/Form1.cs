@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
             game = new Game(4);
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void tableLayoutPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -54,21 +54,17 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void menu_start_Click(object sender, EventArgs e)
         {
             game.start();
             refresh();
         }
 
-        private void refresh ()
+        private void refresh()
+
         {
-            for (int position = 0; position < 16; position++) ;
-                button(position).Text = game.get_number(position).ToString(); ;
+            for (int position = 0; position < 16; position++)
+                button(position).Text = game.get_number(position).ToString();
         }
     }
 }

@@ -28,6 +28,8 @@ namespace WindowsFormsApp1
         private void button15_Click(object sender, EventArgs e)
         {
             int position = Convert.ToInt16(((Button)sender).Tag);
+            game.shift(position);
+            refresh();
         }
 
         private Button button(int position)
@@ -64,7 +66,11 @@ namespace WindowsFormsApp1
 
         {
             for (int position = 0; position < 16; position++)
-                button(position).Text = game.get_number(position).ToString();
+            {
+                int nr = game.get_number(position);
+                button(position).Text = nr.ToString();
+                button(position).Visible = (nr > 0);
+            }
         }
     }
 }

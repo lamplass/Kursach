@@ -31,6 +31,18 @@ namespace WindowsFormsApp1
             
         }
 
+        public void shift(int position)
+        {
+            int x, y;
+            posit_coords(position, out x, out y);
+            if (Math.Abs(space_x - x) + Math.Abs(space_y - y) != 1)
+                return; 
+            map[space_x, space_y] = map[x, y];
+            map[x, y] = 0;
+            space_x = x;
+            space_y = y;
+        }
+
         public int get_number (int position)
         {
             int x, y;

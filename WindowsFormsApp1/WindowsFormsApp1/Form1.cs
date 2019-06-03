@@ -30,6 +30,11 @@ namespace WindowsFormsApp1
             int position = Convert.ToInt16(((Button)sender).Tag);
             game.shift(position);
             refresh();
+            if (game.check_succes())
+            {
+                MessageBox.Show("you win!");
+                start_game();
+            }
         }
 
         private Button button(int position)
@@ -56,9 +61,20 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            start_game();
+        }
+
         private void menu_start_Click(object sender, EventArgs e)
         {
+            start_game();
+        }
+        private void start_game()
+        { 
             game.start();
+            for (int j = 0; j < 100; j++)
+                game.shift_rand();
             refresh();
         }
 
@@ -72,5 +88,7 @@ namespace WindowsFormsApp1
                 button(position).Visible = (nr > 0);
             }
         }
+
+        
     }
 }

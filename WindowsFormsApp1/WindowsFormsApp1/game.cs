@@ -11,6 +11,7 @@ namespace WindowsFormsApp1
         int size;
         int[,] map;
         int space_x, space_y;
+        static Random rand = new Random();
 
         public Game (int size)
         {
@@ -43,6 +44,36 @@ namespace WindowsFormsApp1
             space_y = y;
         }
 
+        public void shift_rand()
+        {
+            int a = rand.Next(0, 4);
+            int x = space_x;
+            int y = space_y;
+            switch (a)
+            {
+                case 0: x--; break;
+                case 1: x++; break;
+                case 2: y--; break;
+                case 3: y++; break;
+
+            }
+            shift(coords_posit(x, y));
+        }
+
+        public bool check_succes()
+        {
+            if (!(space_x == size - 1 &&
+                  space_y == size - 1))
+                return false;
+            for (int x = 0; x < size; x++)
+                for (int y = 0; y < size; y++)
+                    if (!(x == size - 1 && y == size - 1))
+                    if (map[x, y] != coords_posit(x, y) + 1)
+                        return false;
+            return true;
+        }
+
+
         public int get_number (int position)
         {
             int x, y;
@@ -54,12 +85,19 @@ namespace WindowsFormsApp1
 
         private int coords_posit (int x, int y)
         {
-            return y * size + x;
+           
+            if (x < 0) x = 0;
+            if (x > size - 1) x = size - 1;
+            if (y < 0) y = 0;
+            if (y > size - 1) y = size - 1;
+                    return y * size + x;
         }
 
 
         private void posit_coords (int position, out int x, out int y)
         {
+            if (position < 0) position = 0;
+            if (position > size * size - 1) position = size * size - 1;
             x = position % size;
             y = position / size;
         }

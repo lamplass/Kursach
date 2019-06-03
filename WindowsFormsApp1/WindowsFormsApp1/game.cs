@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    class game
+    class Game
     {
         int size;
         int[,] map;
         int space_x, space_y;
 
-        public game (int size)
+        public Game (int size)
         {
             if (size < 2) size = 2;
             if (size > 5) size = 5;
@@ -30,10 +30,10 @@ namespace WindowsFormsApp1
             map[space_x, space_y - 1] = 0;       
         }
 
-        public int number (int posit)
+        public int get_number (int position)
         {
             int x, y;
-            posit_coords(posit, out x, out y);
+            posit_coords(position, out x, out y);
             if (x < 0 || x >= size) return 0;
             if (y < 0 || y >= size) return 0;
             return map[x, y];
@@ -45,10 +45,10 @@ namespace WindowsFormsApp1
         }
 
 
-        private int posit_coords (int posit, out int x, out int y)
+        private int posit_coords (int position, out int x, out int y)
         {
-            x = posit % size;
-            y = posit / size;
+            x = position % size;
+            y = position / size;
 
         }
 

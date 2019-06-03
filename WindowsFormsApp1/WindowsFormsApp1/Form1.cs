@@ -11,10 +11,13 @@ using System.Windows.Forms;
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
-    {
+    { 
+        Game game; 
+
         public Form1()
         {
             InitializeComponent();
+            game = new Game(4);
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -24,12 +27,12 @@ namespace WindowsFormsApp1
 
         private void button15_Click(object sender, EventArgs e)
         {
-            int posit = Convert.ToInt16(((Button)sender).Tag);
+            int position = Convert.ToInt16(((Button)sender).Tag);
         }
 
-        private Button button(int posit)
+        private Button button(int position)
         {
-            switch (posit)
+            switch (position)
             {
                 case 0: return button0;
                 case 1: return button1;
@@ -49,6 +52,23 @@ namespace WindowsFormsApp1
                 case 15: return button15;
                     default: return null;
             }
-        }  
+        }
+
+        private void menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void menu_start_Click(object sender, EventArgs e)
+        {
+            game.start();
+            refresh();
+        }
+
+        private void refresh ()
+        {
+            for (int position = 0; position < 16; position++) ;
+                button(position).Text = game.get_number(position).ToString(); ;
+        }
     }
 }

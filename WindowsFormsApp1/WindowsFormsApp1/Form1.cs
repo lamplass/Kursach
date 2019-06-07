@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
 
         public Form1()
         {
+
             InitializeComponent();
             game = new Game(4);
         }
@@ -32,9 +33,11 @@ namespace WindowsFormsApp1
             refresh();
             if (game.check_succes())
             {
+                timer1.Enabled = false;
                 MessageBox.Show("you win!");
                 
             }
+            
         }
 
         private Button button(int position)
@@ -63,18 +66,43 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //start_game();
+           
+        }
+
+        private int m, s, ms;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ms += 1;
+            if (ms == 60)
+            {
+                ms = 0;
+                s += 01;
+            }
+            if (s == 60)
+            {
+                s = 0;
+                m += 01;
+            }
+
+            label1.Text = m.ToString() + ":" + s.ToString() + ":" + ms.ToString();
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
+            
             start_game();
+            m = 0;
+            ms = 0;
+            s = 0;
+            timer1.Enabled = true;
+           
         }
+
         private void start_game()
 
         {
             game.start();
-            for (int j = 0; j < 100; j++)
+            for (int j = 0; j < 2; j++)
                 game.shift_rand();
             refresh();
         }
@@ -90,6 +118,9 @@ namespace WindowsFormsApp1
             }
         }
 
-        
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

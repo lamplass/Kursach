@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
             if (game.check_succes())
             {
                 MessageBox.Show("you win!");
-                start_game();
+                
             }
         }
 
@@ -63,15 +63,16 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            start_game();
+            //start_game();
         }
 
-        private void menu_start_Click(object sender, EventArgs e)
+        private void button16_Click(object sender, EventArgs e)
         {
             start_game();
         }
         private void start_game()
-        { 
+
+        {
             game.start();
             for (int j = 0; j < 100; j++)
                 game.shift_rand();

@@ -49,7 +49,12 @@
             this.button16 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.res = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nick = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel
@@ -90,6 +95,7 @@
             // button15
             // 
             this.button15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button15.Location = new System.Drawing.Point(413, 365);
             this.button15.Margin = new System.Windows.Forms.Padding(10);
             this.button15.Name = "button15";
@@ -103,6 +109,7 @@
             // button14
             // 
             this.button14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button14.Location = new System.Drawing.Point(279, 365);
             this.button14.Margin = new System.Windows.Forms.Padding(10);
             this.button14.Name = "button14";
@@ -116,6 +123,7 @@
             // button13
             // 
             this.button13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button13.Location = new System.Drawing.Point(145, 365);
             this.button13.Margin = new System.Windows.Forms.Padding(10);
             this.button13.Name = "button13";
@@ -129,6 +137,7 @@
             // button12
             // 
             this.button12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button12.Location = new System.Drawing.Point(11, 365);
             this.button12.Margin = new System.Windows.Forms.Padding(10);
             this.button12.Name = "button12";
@@ -142,6 +151,7 @@
             // button11
             // 
             this.button11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button11.Location = new System.Drawing.Point(413, 247);
             this.button11.Margin = new System.Windows.Forms.Padding(10);
             this.button11.Name = "button11";
@@ -155,6 +165,7 @@
             // button10
             // 
             this.button10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button10.Location = new System.Drawing.Point(279, 247);
             this.button10.Margin = new System.Windows.Forms.Padding(10);
             this.button10.Name = "button10";
@@ -168,6 +179,7 @@
             // button9
             // 
             this.button9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button9.Location = new System.Drawing.Point(145, 247);
             this.button9.Margin = new System.Windows.Forms.Padding(10);
             this.button9.Name = "button9";
@@ -181,6 +193,7 @@
             // button8
             // 
             this.button8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button8.Location = new System.Drawing.Point(11, 247);
             this.button8.Margin = new System.Windows.Forms.Padding(10);
             this.button8.Name = "button8";
@@ -194,6 +207,7 @@
             // button7
             // 
             this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button7.Location = new System.Drawing.Point(413, 129);
             this.button7.Margin = new System.Windows.Forms.Padding(10);
             this.button7.Name = "button7";
@@ -207,6 +221,7 @@
             // button6
             // 
             this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button6.Location = new System.Drawing.Point(279, 129);
             this.button6.Margin = new System.Windows.Forms.Padding(10);
             this.button6.Name = "button6";
@@ -220,6 +235,7 @@
             // button5
             // 
             this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button5.Location = new System.Drawing.Point(145, 129);
             this.button5.Margin = new System.Windows.Forms.Padding(10);
             this.button5.Name = "button5";
@@ -233,6 +249,7 @@
             // button4
             // 
             this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.Location = new System.Drawing.Point(11, 129);
             this.button4.Margin = new System.Windows.Forms.Padding(10);
             this.button4.Name = "button4";
@@ -246,6 +263,7 @@
             // button3
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.Location = new System.Drawing.Point(413, 11);
             this.button3.Margin = new System.Windows.Forms.Padding(10);
             this.button3.Name = "button3";
@@ -259,6 +277,7 @@
             // button2
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.Location = new System.Drawing.Point(279, 11);
             this.button2.Margin = new System.Windows.Forms.Padding(10);
             this.button2.Name = "button2";
@@ -272,6 +291,7 @@
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(145, 11);
             this.button1.Margin = new System.Windows.Forms.Padding(10);
             this.button1.Name = "button1";
@@ -285,6 +305,7 @@
             // button0
             // 
             this.button0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button0.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button0.Location = new System.Drawing.Point(11, 11);
             this.button0.Margin = new System.Windows.Forms.Padding(10);
             this.button0.Name = "button0";
@@ -320,11 +341,40 @@
             this.label1.Text = "00:00:00";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Number,
+            this.res,
+            this.Nick});
+            this.dataGridView1.Location = new System.Drawing.Point(558, 71);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(413, 335);
+            this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Number
+            // 
+            this.Number.HeaderText = "N";
+            this.Number.Name = "Number";
+            // 
+            // res
+            // 
+            this.res.HeaderText = "Result";
+            this.res.Name = "res";
+            // 
+            // Nick
+            // 
+            this.Nick.HeaderText = "Nick";
+            this.Nick.Name = "Nick";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 474);
+            this.ClientSize = new System.Drawing.Size(1024, 474);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.tableLayoutPanel);
@@ -332,6 +382,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -358,6 +409,10 @@
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn res;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nick;
     }
 }
 

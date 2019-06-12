@@ -7,18 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Data.SQLite;
 
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
-    { 
-        Game game; 
+    {
+        Game game;
 
         public Form1()
         {
 
             InitializeComponent();
             game = new Game(4);
+            LoadData();
         }
 
         private void tableLayoutPanel_Paint(object sender, PaintEventArgs e)
@@ -33,11 +36,12 @@ namespace WindowsFormsApp1
             refresh();
             if (game.check_succes())
             {
+
                 timer1.Enabled = false;
-                MessageBox.Show("you win!");
-                
+                MessageBox.Show(String.Format("you win! Ваше время: "));
+
             }
-            
+
         }
 
         private Button button(int position)
@@ -60,17 +64,18 @@ namespace WindowsFormsApp1
                 case 13: return button13;
                 case 14: return button14;
                 case 15: return button15;
-                    default: return null;
+                default: return null;
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+
         }
 
-        private int m, s, ms;
-        private void timer1_Tick(object sender, EventArgs e)
+        public int m, s, ms;
+
+        public void timer1_Tick(object sender, EventArgs e)
         {
             ms += 1;
             if (ms == 60)
@@ -89,13 +94,13 @@ namespace WindowsFormsApp1
 
         private void button16_Click(object sender, EventArgs e)
         {
-            
+
             start_game();
             m = 0;
             ms = 0;
             s = 0;
             timer1.Enabled = true;
-           
+
         }
 
         private void start_game()
@@ -105,6 +110,45 @@ namespace WindowsFormsApp1
             for (int j = 0; j < 2; j++)
                 game.shift_rand();
             refresh();
+        }
+
+        private void LoadData()
+
+        {
+            string connectString = "Data Source=.\\SQLEXPRESS;Initial Catalog=LSTU_Schedule_autumn20172018;" +
+            "Integrated Security=true;";
+
+            SqlConnection myConnection = new SqlConnection(connectString);
+
+            myConnection.Open();
+
+            string query = "SELECT * FROM Faculty ORDER BY N";
+
+            SqlCommand command = new SqlCommand(query, myConnection);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[3]);
+
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+            }
+
+            reader.Close();
+            myConnection.Close();
+
+            foreach (string[] s in data)
+                dataGridView1.Rows.Add(s);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         private void refresh()
